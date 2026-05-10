@@ -7,16 +7,16 @@ stages:
   jobs:
   - job: Job
     pool:
-      vmImage: ubuntu-latest
-    steps:
+      vmImage:ubuntu-latest
+    steps: 
     - task: Maven@3
-      inputs:
+      inputs: 
         mavenPomFile: 'artifact1/pom.xml'
         mavenOptions: '-Xmx3072m'
         javaHomeOption: 'JDKVersion'
         jdkVersionOption: '17'
         jdkArchitectureOption: 'x64'
-        publishJUnitResults: true
+        publishJUnitResults: true 
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         goals: 'clean package'
     - task: PublishBuildArtifacts@1
